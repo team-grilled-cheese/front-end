@@ -60,6 +60,18 @@
 
         </div>
 
-  </body>
-
+      <div id='surveybox'>
+      <form id="survey">
+        <fieldset>
+        <legend>Survey form</legend>
+            <input name="survey[title]" type='text' placeholder='Title'/><br>
+            <input name="survey[question]" type='text' placeholder='Question'/><br>
+            <input name="survey[answer]" type='radio' value=1 /><label for="1">1</label><br>
+            <input name="survey[answer]" type='radio' value=2 /><label for="2">2</label><br>
+            <input name="survey[answer]" type='radio' value=3 /><label for="3">3</label><br>
+            <button type='submit' class='btn btn-dark'>Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    </body>
 </html>
