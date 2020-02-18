@@ -2,7 +2,9 @@ const store = require('./store')
 
 const onCreateSuccess = function (response) {
   store.survey = response.survey
-  $('#surveybox').text('Success!')
+  $('#message').show('')
+  $('#message').text('Success!')
+  $('#message').delay(2000).hide('Success!')
 }
 
 const onCreateFailure = function () {
