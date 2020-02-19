@@ -24,7 +24,7 @@
     </div>
 
     <h1>Surveys</h1>
-
+    <div class='main'>
     <p id='message'></p>
 
         <form class="pt-4 pl-2" id='sign-up'>
@@ -60,18 +60,31 @@
 
         </div>
 
+      <div class='sidenav'>
+        <form id='index'>
+          <button type='submit'class='btn btn-dark index'>Show surveys</button>
+          <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+        </form>
+      <div class='content'></div>
+      </div>
+
+
       <div id='surveybox'>
       <form id="survey">
         <fieldset>
         <legend>Survey form</legend>
             <input name="survey[title]" type='text' placeholder='Title'/><br>
-            <input name="survey[question]" type='text' placeholder='Question'/><br>
-            <input name="survey[answer]" type='radio' value=1 /><label for="1">1</label><br>
-            <input name="survey[answer]" type='radio' value=2 /><label for="2">2</label><br>
-            <input name="survey[answer]" type='radio' value=3 /><label for="3">3</label><br>
+            <input name="survey[answer[answer]]" type='radio' value=1 /><label for="1">1</label><br>
+            <input name="survey[answer[answer]]" type='radio' value=2 /><label for="2">2</label><br>
+            <input name="survey[answer[answer]]" type='radio' value=3 /><label for="3">3</label><br>
             <button type='submit' class='btn btn-dark'>Submit</button>
         </fieldset>
       </form>
     </div>
+
+  </div>
+
     </body>
 </html>

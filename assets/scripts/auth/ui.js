@@ -32,6 +32,7 @@ const signInSuccess = function (response) {
   $('#message').delay(1500).hide('Successfully signed up!')
   // $('input[type=email]').val('')
   // console.log(response)
+  $('.index').show()
 }
 
 const changeSuccess = function (response) {
@@ -60,6 +61,7 @@ const signOutSuccess = function (response) {
   $('.changePassNav').hide()
   $('#message').delay(1500).hide('Sign out complete!')
   // console.log(response)
+  $('.index').hide()
 }
 
 const signUpFailure = function () {
