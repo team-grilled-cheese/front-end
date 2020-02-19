@@ -1,5 +1,6 @@
 const store = require('./../store')
 const surveysTemplate = require('../templates/survey-listing.handlebars')
+const showOneSurvey = require('../templates/oneSurvey.handlebars')
 
 const onCreateSuccess = function (response) {
   store.survey = response.survey
@@ -21,12 +22,27 @@ const onGetAllSurveysSuccess = (response) => {
 }
 
 const onGetAllSurveysFailure = (response) => {
-  console.log('this didnt work')
+  $('#message').show('')
+  $('#message').text('Something went wrong!')
+  $('#message').delay(2000).hide('Something went wrong!')
+}
+
+const onGetOneSurveySuccess = (response) => {
+  const showThisSurvey = showOneSurvey({ survey: response.survey })
+  $('#surveybox').html(showThisSurvey)
+}
+
+const onGetOneSurveyFailure = () => {
+  $('#message').show('')
+  $('#message').text('Something went wrong!')
+  $('#message').delay(2000).hide('Something went wrong!')
 }
 
 module.exports = {
   onCreateSuccess,
   onCreateFailure,
   onGetAllSurveysSuccess,
-  onGetAllSurveysFailure
+  onGetAllSurveysFailure,
+  onGetOneSurveySuccess,
+  onGetOneSurveyFailure
 }

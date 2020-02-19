@@ -1,0 +1,16 @@
+{{#with survey as |survey|}}
+<section class='oneSurvey' data-id="{{survey._id}}">
+  <h3 class='question'>
+    {{survey.question}}
+  </h3>
+  <form>
+    <fieldset>
+      <input type='radio' value="{{survey.possibleAnswers.[0]}}" /><label> {{survey.possibleAnswers.[0]}}</label><br>
+      <input type='radio' value="{{survey.possibleAnswers.[1]}}" /><label> {{survey.possibleAnswers.[1]}}</label><br>
+      <input type='radio' value="{{survey.possibleAnswers.[2]}}" /><label> {{survey.possibleAnswers.[2]}}</label><br>
+      <input type='radio' value="{{survey.possibleAnswers.[3]}}" /><label> {{survey.possibleAnswers.[3]}}</label><br>
+      <button type='submit' class='sendSurvey'>Submit Survey</button>
+    </fieldset>
+  </form>
+</section>
+{{/with}}
