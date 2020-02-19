@@ -1,14 +1,19 @@
 const config = require('./../config')
 const store = require('./../store.js')
 
-const createSurvey = function (data) {
+const createSurvey = function () {
   return $.ajax({
     url: config.apiUrl + '/surveys',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data: {
+      'survey': {
+        'possibleAnswers': store.possibleAnswersArray,
+        'question': store.surveyQuestion
+      }
+    }
   })
 }
 

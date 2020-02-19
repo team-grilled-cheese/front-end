@@ -5,10 +5,13 @@ const onCreateSuccess = function (response) {
   $('#message').show('')
   $('#message').text('Success!')
   $('#message').delay(2000).hide('Success!')
+  $('#createSurvey').trigger('reset')
 }
 
 const onCreateFailure = function () {
-  $('#surveybox').text('Something went wrong!')
+  $('#message').show('')
+  $('#message').text('Something went wrong!')
+  $('#message').delay(2000).hide('Something went wrong!')
 }
 
 const onGetAllSurveysSuccess = (response) => {
