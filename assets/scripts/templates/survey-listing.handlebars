@@ -1,0 +1,9 @@
+{{#each surveys as |survey|}}
+  <section data-id="{{survey.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{survey.question}}
+    </h3>
+    <button type=button class='destroySurvey'>Remove</button>
+    <button type='submit' class='updateSurvey'>Update</button>
+  </section>{{/each}}
