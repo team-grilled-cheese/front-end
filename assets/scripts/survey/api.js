@@ -27,7 +27,18 @@ const showAllSurveys = function () {
   })
 }
 
+const onShowOneSurvey = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/surveys/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createSurvey,
-  showAllSurveys
+  showAllSurveys,
+  onShowOneSurvey
 }

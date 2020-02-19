@@ -28,22 +28,18 @@ const onShowSurveys = () => {
     .catch(ui.onGetAllSurveysFailure)
 }
 
-// const onUsersRequest = (event) => {
-//   event.preventDefault()
-//   const form = event.target
-//   const data = getFormFields(form)
-//
-//   console.log(data)
-//   $('.answer1').append(data.answer1)
-//   $('.answer2').append(data.answer2)
-//   $('.answer3').append(data.answer3)
-//   $('.answer4').append(data.answer4)
-// }
+const onShowOneSurvey = (event) => {
+  const id = $(event.target).closest('section').data('id')
+
+  api.onShowOneSurvey(id)
+    .then(ui.onGetOneSurveySuccess)
+    .catch(ui.onGetOneSurveyFailure)
+}
 
 const addHandlers = function () {
   $('#createSurvey').on('submit', onCreateSurvey)
   $('.surveyIndex').on('click', onShowSurveys)
-  // $('#userRequest').on('submit', onUsersRequest)
+  $('#surveybox').on('click', '.surveyList', onShowOneSurvey)
 }
 
 module.exports = {
