@@ -36,10 +36,23 @@ const onShowOneSurvey = (event) => {
     .catch(ui.onGetOneSurveyFailure)
 }
 
+const onSendSurvey = (event) => {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+
+  // store.currentSurveyId = $(event.target).closest('section').data('id')
+  console.log(data)
+  // api.onSendAnswers(data)
+  //   .then()
+  //   .catch()
+}
+
 const addHandlers = function () {
   $('#createSurvey').on('submit', onCreateSurvey)
   $('.surveyIndex').on('click', onShowSurveys)
   $('#surveybox').on('click', '.surveyList', onShowOneSurvey)
+  $('#oneSurvey').on('click', '.sendSurvey', onSendSurvey)
 }
 
 module.exports = {
