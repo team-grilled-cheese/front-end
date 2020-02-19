@@ -1,5 +1,5 @@
 'use strict'
-const surveyEvents = require('./surveyEvents')
+const surveyEvents = require('./survey/surveyEvents')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')

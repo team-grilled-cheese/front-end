@@ -1,4 +1,4 @@
-const store = require('./store')
+const store = require('./../store')
 
 const onCreateSuccess = function (response) {
   store.survey = response.survey
@@ -11,7 +11,17 @@ const onCreateFailure = function () {
   $('#surveybox').text('Something went wrong!')
 }
 
+const onGetAllSurveysSuccess = (response) => {
+  console.log(response)
+}
+
+const onGetAllSurveysFailure = (response) => {
+  console.log('this didnt work')
+}
+
 module.exports = {
   onCreateSuccess,
-  onCreateFailure
+  onCreateFailure,
+  onGetAllSurveysSuccess,
+  onGetAllSurveysFailure
 }

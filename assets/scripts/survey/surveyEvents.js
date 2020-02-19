@@ -1,6 +1,6 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
-const getFormFields = require('./../../lib/get-form-fields')
+const getFormFields = require('./../../../lib/get-form-fields')
 
 const onCreateSurvey = (event) => {
   event.preventDefault()
@@ -12,8 +12,17 @@ const onCreateSurvey = (event) => {
     .catch(ui.onCreateFailure)
 }
 
+const onShowSurveys = () => {
+  event.preventDefault()
+
+  api.showAllSurveys()
+    .then(ui.onGetAllSurveysSuccess)
+    .catch(ui.onGetAllSurveysFailure)
+}
+
 const addHandlers = function () {
   $('#survey').on('submit', onCreateSurvey)
+  $('.surveyIndex').on('click', onShowSurveys)
 }
 
 module.exports = {
