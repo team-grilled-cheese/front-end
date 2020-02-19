@@ -60,18 +60,31 @@
 
         </div>
       <button type='button' class='btn btn-dark surveyIndex'> Get All Surveys</button>
-      <div id='surveybox'>
-      <form id="survey">
+      <div id='surveybox'> </div>
+
+
+      <form id="createSurvey">
         <fieldset>
         <legend>Survey form</legend>
-            <input name="survey[title]" type='text' placeholder='Title'/><br>
             <input name="survey[question]" type='text' placeholder='Question'/><br>
-            <input name="response[answer]" type='radio' value=1 /><label for="1">1</label><br>
-            <input name="response[answer]" type='radio' value=2 /><label for="2">2</label><br>
-            <input name="response[answer]" type='radio' value=3 /><label for="3">3</label><br>
+            <input name="answer1" type='text' /><br>
+            <input name="answer2" type='text' /><br>
+            <input name="answer3" type='text' /><br>
+            <input name="answer4" type='text' /><br>
             <button type='submit' class='btn btn-dark'>Submit</button>
         </fieldset>
       </form>
-    </div>
+
+      <!-- <form id='userRequest'>
+        <fieldset>
+          <legend> New Survey </legend>
+          <input name='SurveyQuestion' type='text' placeholder='Survey Question'>
+          <input name='answer1' type='text' placeholder='Answer 1'>
+          <input name='answer2' type='text' placeholder='Answer 2'>
+          <input name='answer3' type='text' placeholder='Answer 3'>
+          <input name='answer4' type='text' placeholder='Answer 4'>
+          <button type='submit'>Generate Survey</button>
+        </fieldset>
+      </form> -->
     </body>
 </html>

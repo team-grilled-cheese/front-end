@@ -13,7 +13,7 @@ $(() => {
   $('.changePassNav').hide()
   $('#sign-up').hide()
   $('#sign-in').hide()
-  $('#surveybox').hide()
+  // $('#createSurvey').hide()
   authEvents.addHandlers()
   // your JS code goes here
   surveyEvents.addHandlers()
