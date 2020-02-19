@@ -1,4 +1,5 @@
 const store = require('./../store')
+const surveysTemplate = require('../templates/survey-listing.handlebars')
 
 const onCreateSuccess = function (response) {
   store.survey = response.survey
@@ -15,7 +16,8 @@ const onCreateFailure = function () {
 }
 
 const onGetAllSurveysSuccess = (response) => {
-  console.log(response)
+  const onGetAllSurveysHtml = surveysTemplate({surveys: response.surveys})
+  $('#surveybox').html(onGetAllSurveysHtml)
 }
 
 const onGetAllSurveysFailure = (response) => {
