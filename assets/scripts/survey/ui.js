@@ -18,9 +18,9 @@ const onCreateFailure = function () {
 
 const onGetAllSurveysSuccess = (response) => {
   const onGetAllSurveysHtml = surveysTemplate({surveys: response.surveys})
-  $('#createSurvey').hide()
   $('.sendSurvey').show()
-  $('#surveybox').html(onGetAllSurveysHtml)
+  $('#surveybox').show()
+  $('.allSurveyList').html(onGetAllSurveysHtml)
 }
 
 const onGetAllSurveysFailure = (response) => {
