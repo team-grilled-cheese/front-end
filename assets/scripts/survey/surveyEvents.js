@@ -41,11 +41,12 @@ const onSendSurvey = (event) => {
   const form = event.target
   const data = getFormFields(form)
 
-  // store.currentSurveyId = $(event.target).closest('section').data('id')
+  store.currentAnswer = data.answer.answer
+  store.currentSurveyId = $(event.target).closest('section').data('id')
   console.log(data)
-  // api.onSendAnswers(data)
-  //   .then()
-  //   .catch()
+  api.onSendAnswers(data)
+    .then()
+    .catch()
 }
 
 const onUpdateSurvey = (event) => {
@@ -81,8 +82,8 @@ const addHandlers = function () {
   $('#surveybox').on('click', '.surveyList', onShowOneSurvey)
   $('#surveybox').on('click', '.destroySurvey', onDeleteSurvey)
   $('#surveybox').on('click', '.updateSurvey', onUpdateSurvey)
-  $('#oneSurvey').on('click', '.sendSurvey', onSendSurvey)
   $('#updateSurvey').on('submit', onEditSurvey)
+  $('#surveybox').on('submit', '.sendSurvey', onSendSurvey)
 }
 
 module.exports = {
