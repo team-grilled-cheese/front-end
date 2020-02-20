@@ -38,11 +38,18 @@ const onGetOneSurveyFailure = () => {
   $('#message').delay(2000).hide('Something went wrong!')
 }
 
+const onDeleteSurveyFailure = () => {
+  $('#message').show('')
+  $('#message').text('Something went wrong!')
+  $('#message').delay(2000).hide('Something went wrong!')
+}
+
 module.exports = {
   onCreateSuccess,
   onCreateFailure,
   onGetAllSurveysSuccess,
   onGetAllSurveysFailure,
   onGetOneSurveySuccess,
-  onGetOneSurveyFailure
+  onGetOneSurveyFailure,
+  onDeleteSurveyFailure
 }

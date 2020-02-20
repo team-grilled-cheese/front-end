@@ -37,8 +37,19 @@ const onShowOneSurvey = (id) => {
   })
 }
 
+const onDeleteSurvey = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/surveys/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createSurvey,
   showAllSurveys,
-  onShowOneSurvey
+  onShowOneSurvey,
+  onDeleteSurvey
 }

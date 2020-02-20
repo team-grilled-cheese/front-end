@@ -20,7 +20,7 @@ const onCreateSurvey = (event) => {
     .catch(ui.onCreateFailure)
 }
 
-const onShowSurveys = () => {
+const onShowSurveys = (event) => {
   event.preventDefault()
 
   api.showAllSurveys()
@@ -48,10 +48,20 @@ const onSendSurvey = (event) => {
   //   .catch()
 }
 
+const onDeleteSurvey = (event) => {
+  event.preventDefault()
+  const id = $(event.target).closest('section').data('id')
+  console.log(id)
+  api.onDeleteSurvey(id)
+    .then(() => onShowSurveys(event))
+    .catch(ui.onDeleteSurveyFailure)
+}
+
 const addHandlers = function () {
   $('#createSurvey').on('submit', onCreateSurvey)
   $('.surveyIndex').on('click', onShowSurveys)
   $('#surveybox').on('click', '.surveyList', onShowOneSurvey)
+  $('#surveybox').on('click', '.destroySurvey', onDeleteSurvey)
   $('#oneSurvey').on('click', '.sendSurvey', onSendSurvey)
 }
 
