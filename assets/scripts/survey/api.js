@@ -37,8 +37,31 @@ const onShowOneSurvey = (id) => {
   })
 }
 
+const onUpdateSurvey = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/surveys/' + store.SurveyId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
+const onDeleteSurvey = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/surveys/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createSurvey,
   showAllSurveys,
-  onShowOneSurvey
+  onShowOneSurvey,
+  onDeleteSurvey,
+  onUpdateSurvey
 }

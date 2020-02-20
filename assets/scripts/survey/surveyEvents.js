@@ -20,7 +20,7 @@ const onCreateSurvey = (event) => {
     .catch(ui.onCreateFailure)
 }
 
-const onShowSurveys = () => {
+const onShowSurveys = (event) => {
   event.preventDefault()
 
   api.showAllSurveys()
@@ -48,11 +48,41 @@ const onSendSurvey = (event) => {
   //   .catch()
 }
 
+const onUpdateSurvey = (event) => {
+  event.preventDefault()
+  const id = $(event.target).closest('section').data('id')
+  store.SurveyId = id // saving id of the element in the list (survey) that was clicked
+  $('#updateSurvey').show()
+}
+
+const onEditSurvey = (event) => {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.onUpdateSurvey(data)
+    .then(ui.onUpdateSurveySuccess)
+    .then(() => onShowSurveys(event))
+    .catch(ui.onUpdateSurveyFailure)
+}
+
+const onDeleteSurvey = (event) => {
+  event.preventDefault()
+  const id = $(event.target).closest('section').data('id')
+  console.log(id)
+  api.onDeleteSurvey(id)
+    .then(() => onShowSurveys(event))
+    .catch(ui.onDeleteSurveyFailure)
+}
+
 const addHandlers = function () {
   $('#createSurvey').on('submit', onCreateSurvey)
   $('.surveyIndex').on('click', onShowSurveys)
   $('#surveybox').on('click', '.surveyList', onShowOneSurvey)
+  $('#surveybox').on('click', '.destroySurvey', onDeleteSurvey)
+  $('#surveybox').on('click', '.updateSurvey', onUpdateSurvey)
   $('#oneSurvey').on('click', '.sendSurvey', onSendSurvey)
+  $('#updateSurvey').on('submit', onEditSurvey)
 }
 
 module.exports = {
