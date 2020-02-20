@@ -31,6 +31,8 @@ const onGetAllSurveysFailure = (response) => {
 
 const onGetOneSurveySuccess = (response) => {
   const showThisSurvey = showOneSurvey({ survey: response.survey })
+  $('#updateSurvey').hide()
+  $('#createSurvey').hide()
   $('#surveybox').html(showThisSurvey)
 }
 
