@@ -46,7 +46,7 @@ const onSendSurvey = (event) => {
   // console.log(data)
   api.onSendAnswers(data)
     .then(ui.sendSurveySuccess)
-    .then($('.sendSurvey').hide())
+    .then($('#oneSurvey').hide())
     .catch(ui.sendSurveyFailure)
 }
 
@@ -83,6 +83,8 @@ const onDeleteSurvey = (event) => {
     .catch(ui.onDeleteSurveyFailure)
 }
 const showCreateSurveyForm = (event) => {
+  $('.surveyList').hide()
+  $('#surveybox').show()
   $('#createSurvey').show()
 }
 
