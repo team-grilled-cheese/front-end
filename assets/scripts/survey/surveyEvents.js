@@ -78,7 +78,7 @@ const onEditSurvey = (event) => {
 const onDeleteSurvey = (event) => {
   event.preventDefault()
   const id = $(event.target).closest('section').data('id')
-  console.log(id)
+  // console.log(id)
   event.stopPropagation()
   api.onDeleteSurvey(id)
     .then(ui.onDeleteSurveySuccess)
