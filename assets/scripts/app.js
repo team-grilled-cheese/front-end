@@ -11,6 +11,7 @@ const authEvents = require('./auth/events')
 
 $(() => {
   $('#change-password').hide()
+  $('#menu-toggle').hide()
   $('#sign-out').hide()
   $('.changePassNav').hide()
   $('#sign-up').hide()
@@ -20,8 +21,11 @@ $(() => {
   $('.surveyIndex').hide()
   // $('#createSurvey').hide()
   authEvents.addHandlers()
-  // your JS code goes here
   surveyEvents.addHandlers()
   $('#updateSurvey').hide()
   // answerEvents.addHandlers()
+  $('#menu-toggle').click(function (e) {
+    e.preventDefault()
+    $('#wrapper').toggleClass('toggled')
+  })
 })
