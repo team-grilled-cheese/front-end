@@ -63,7 +63,7 @@ const signOutSuccess = function (response) {
   $('.changePassNav').hide()
   $('#message').delay(1500).hide('Sign out complete!')
   $('#menu-toggle').hide()
-  $('#wrapper').toggleClass('toggled')
+  $('#wrapper').toggleClass('toggled', true)
 }
 
 const signUpFailure = function () {

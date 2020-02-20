@@ -94,7 +94,7 @@ const addHandlers = function () {
   $('.createSurvey').on('click', showCreateSurveyForm)
   $('#surveybox').on('click', '.surveyList', onShowOneSurvey)
   $('#surveybox').on('click', '.destroySurvey', onDeleteSurvey)
-  $('#surveybox').on('click', '.updateSurvey', onUpdateSurvey)
+  $('.allSurveyList').on('click', '.updateSurvey', onUpdateSurvey)
   $('#updateSurvey').on('submit', onEditSurvey)
   $('#surveybox').on('submit', '.sendSurvey', onSendSurvey)
 }
