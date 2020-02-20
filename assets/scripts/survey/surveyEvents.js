@@ -7,7 +7,7 @@ const onCreateSurvey = (event) => {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
+  // console.log(data)
   store.surveyQuestion = data.survey.question
   store.possibleAnswersArray = []
   store.possibleAnswersArray.push(data.answer1)
@@ -43,10 +43,11 @@ const onSendSurvey = (event) => {
 
   store.currentAnswer = data.answer.answer
   store.currentSurveyId = $(event.target).closest('section').data('id')
-  console.log(data)
+  // console.log(data)
   api.onSendAnswers(data)
-    .then()
-    .catch()
+    .then(ui.sendSurveySuccess)
+    .then($('#surveybox').hide())
+    .catch(ui.sendSurveyFailure)
 }
 
 const onUpdateSurvey = (event) => {
@@ -76,7 +77,7 @@ const onEditSurvey = (event) => {
 const onDeleteSurvey = (event) => {
   event.preventDefault()
   const id = $(event.target).closest('section').data('id')
-  console.log(id)
+  // console.log(id)
   api.onDeleteSurvey(id)
     .then(() => onShowSurveys(event))
     .catch(ui.onDeleteSurveyFailure)
