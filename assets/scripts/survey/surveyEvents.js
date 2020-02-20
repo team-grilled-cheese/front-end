@@ -75,10 +75,14 @@ const onDeleteSurvey = (event) => {
     .then(() => onShowSurveys(event))
     .catch(ui.onDeleteSurveyFailure)
 }
+const showCreateSurveyForm = (event) => {
+  $('#createSurvey').show()
+}
 
 const addHandlers = function () {
   $('#createSurvey').on('submit', onCreateSurvey)
   $('.surveyIndex').on('click', onShowSurveys)
+  $('.createSurvey').on('click', showCreateSurveyForm)
   $('#surveybox').on('click', '.surveyList', onShowOneSurvey)
   $('#surveybox').on('click', '.destroySurvey', onDeleteSurvey)
   $('#surveybox').on('click', '.updateSurvey', onUpdateSurvey)

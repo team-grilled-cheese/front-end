@@ -15,6 +15,9 @@ $(() => {
   $('.changePassNav').hide()
   $('#sign-up').hide()
   $('#sign-in').hide()
+  $('#createSurvey').hide()
+  $('.createSurvey').hide()
+  $('.surveyIndex').hide()
   // $('#createSurvey').hide()
   authEvents.addHandlers()
   // your JS code goes here
