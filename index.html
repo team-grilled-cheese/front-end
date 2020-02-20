@@ -14,14 +14,27 @@
   </head>
 
   <body>
+<!-- side bar  -->
+<div id="wrapper" class='toggled'>
+<div class='bg-light border-right' id='sidebar-wrapper'>
+  <div class='sidebar-heading'>Side Bar</div>
+  <div class='list-group list-group-flush'>
+    <button type='button' class='surveyIndex list-group-item list-group-item-action bg-light'>Get all Surveys</button>
+    <div class='list-group-item list-group-item-action bg-light allSurveyList'></div>
+  </div>
+</div>
 
-    <div class="topnav">
-      <!-- <h1>Test</h1> -->
-      <a class="signup" href="#sign-up">Sign Up</a>
-      <a class="signin" href="#sign-in">Sign In</a>
-      <a class="changePassNav" href="#change-pass">Change Password</a>
-      <a class="signOutNav" id="sign-out" href="#sign-out">Sign Out</a>
-    </div>
+<!-- end sidebar -->
+
+<div id="page-content-wrapper">
+  <div class="topnav">
+    <!-- <h1>Test</h1> -->
+    <a class="signup" href="#sign-up">Sign Up</a>
+    <a class="signin" href="#sign-in">Sign In</a>
+    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Show Surveys</a>
+    <a class="changePassNav" href="#change-pass">Change Password</a>
+    <a class="signOutNav" id="sign-out" href="#sign-out">Sign Out</a>
+  </div>
 
     <h1>Surveys</h1>
 
@@ -59,7 +72,7 @@
           </form>
 
         </div>
-      <button type='button' class='btn btn-dark surveyIndex'> Get All Surveys</button>
+      <!-- <button type='button' class='btn btn-dark surveyIndex'> Get All Surveys</button> -->
       <div id='surveybox'> </div>
 
 
@@ -88,5 +101,7 @@
       </form>
 
       <div id='tester'></div>
+    </div>
+    </div>
     </body>
 </html>

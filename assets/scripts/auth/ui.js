@@ -19,6 +19,7 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#sign-up').hide()
   $('#sign-in').hide()
+  $('#menu-toggle').show()
   // $('#change-password').show()
   $('#sign-out').show()
   $('#surveybox').show()
@@ -52,7 +53,8 @@ const signOutSuccess = function (response) {
   // $('#sign-in').hide()
   $('.changePassNav').hide()
   $('#message').delay(1500).hide('Sign out complete!')
-  // console.log(response)
+  $('#menu-toggle').hide()
+  $('#wrapper').toggleClass('toggled')
 }
 
 const signUpFailure = function () {
