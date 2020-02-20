@@ -46,7 +46,7 @@ const onSendSurvey = (event) => {
   // console.log(data)
   api.onSendAnswers(data)
     .then(ui.sendSurveySuccess)
-    .then($('#surveybox').hide())
+    .then($('.sendSurvey').hide())
     .catch(ui.sendSurveyFailure)
 }
 
