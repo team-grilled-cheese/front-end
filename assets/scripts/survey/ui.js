@@ -18,13 +18,9 @@ const onCreateFailure = function () {
 
 const onGetAllSurveysSuccess = (response) => {
   const onGetAllSurveysHtml = surveysTemplate({surveys: response.surveys})
-<<<<<<< HEAD
-  $('#createSurvey').hide()
   $('.sendSurvey').show()
-  $('#surveybox').html(onGetAllSurveysHtml)
-=======
+  $('#surveybox').show()
   $('.allSurveyList').html(onGetAllSurveysHtml)
->>>>>>> Create Sidebar
 }
 
 const onGetAllSurveysFailure = (response) => {
