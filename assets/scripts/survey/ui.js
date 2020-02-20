@@ -38,6 +38,17 @@ const onGetOneSurveyFailure = () => {
   $('#message').delay(2000).hide('Something went wrong!')
 }
 
+const onUpdateSurveySuccess = function (response) {
+  $('#updateSurvey')[0].reset()
+  $('#updateSurvey').hide()
+}
+
+const onUpdateSurveyFailure = () => {
+  $('#message').show('')
+  $('#message').text('Something went wrong!')
+  $('#message').delay(2000).hide('Something went wrong!')
+}
+
 const onDeleteSurveyFailure = () => {
   $('#message').show('')
   $('#message').text('Something went wrong!')
@@ -51,5 +62,7 @@ module.exports = {
   onGetAllSurveysFailure,
   onGetOneSurveySuccess,
   onGetOneSurveyFailure,
-  onDeleteSurveyFailure
+  onDeleteSurveyFailure,
+  onUpdateSurveyFailure,
+  onUpdateSurveySuccess
 }

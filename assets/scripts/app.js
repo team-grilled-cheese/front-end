@@ -19,5 +19,6 @@ $(() => {
   authEvents.addHandlers()
   // your JS code goes here
   surveyEvents.addHandlers()
+  $('#updateSurvey').hide()
   // answerEvents.addHandlers()
 })

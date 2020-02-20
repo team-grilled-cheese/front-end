@@ -4,6 +4,9 @@
     <h3>
       {{survey.question}}
     </h3>
+    {{#equal survey.owner}}
     <button type=button class='destroySurvey'>Remove</button>
     <button type='submit' class='updateSurvey'>Update</button>
-  </section>{{/each}}
+    {{/equal}}
+  </section>
+  {{/each}}
