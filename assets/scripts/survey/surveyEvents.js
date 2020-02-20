@@ -84,6 +84,7 @@ const onDeleteSurvey = (event) => {
   event.stopPropagation()
   api.onDeleteSurvey(id)
     .then(ui.onDeleteSurveySuccess)
+    .then(() => onShowSurveys(event))
     .catch(ui.onDeleteSurveyFailure)
 }
 const showCreateSurveyForm = (event) => {

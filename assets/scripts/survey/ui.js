@@ -72,7 +72,9 @@ const sendSurveyFailure = () => {
 }
 
 const onDeleteSurveySuccess = () => {
-  console.log('successfully deleted!')
+  $('#message').show('')
+  $('#message').text('Survey deleted.')
+  $('#message').delay(2000).hide('Survey deleted.')
 }
 
 module.exports = {
