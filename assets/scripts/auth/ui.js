@@ -58,6 +58,7 @@ const signOutSuccess = function (response) {
   $('#updateSurvey').hide()
   $('.surveyList').hide()
   $('#oneSurvey').hide()
+  $('#answerStats').hide()
   // $('#sign-up').hide()
   // $('#sign-in').hide()
   $('.changePassNav').hide()
