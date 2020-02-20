@@ -69,6 +69,10 @@ const sendSurveyFailure = () => {
   $('#message').delay(2000).hide('Survey not submitted.')
 }
 
+const onDeleteSurveySuccess = () => {
+  console.log('successfully deleted!')
+}
+
 module.exports = {
   onCreateSuccess,
   onCreateFailure,
@@ -80,5 +84,6 @@ module.exports = {
   onUpdateSurveyFailure,
   onUpdateSurveySuccess,
   sendSurveySuccess,
-  sendSurveyFailure
+  sendSurveyFailure,
+  onDeleteSurveySuccess
 }
