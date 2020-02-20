@@ -60,8 +60,14 @@ const onEditSurvey = (event) => {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
+  store.surveyQuestion = data.survey.question
+  store.possibleAnswersArray = []
+  store.possibleAnswersArray.push(data.answer1)
+  store.possibleAnswersArray.push(data.answer2)
+  store.possibleAnswersArray.push(data.answer3)
+  store.possibleAnswersArray.push(data.answer4)
 
-  api.onUpdateSurvey(data)
+  api.onUpdateSurvey()
     .then(ui.onUpdateSurveySuccess)
     .then(() => onShowSurveys(event))
     .catch(ui.onUpdateSurveyFailure)

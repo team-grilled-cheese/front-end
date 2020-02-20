@@ -44,8 +44,12 @@ const onUpdateSurvey = (data) => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
-  })
+    data: {
+      'survey': {
+        'possibleAnswers': store.possibleAnswersArray,
+        'question': store.surveyQuestion
+      }
+    }})
 }
 
 const onDeleteSurvey = (id) => {

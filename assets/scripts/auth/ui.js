@@ -32,6 +32,7 @@ const signInSuccess = function (response) {
   $('#message').delay(1500).hide('Successfully signed up!')
   // $('input[type=email]').val('')
   // console.log(response)
+  $('#surveybox').append($('#createSurvey'))
 }
 
 const changeSuccess = function (response) {
