@@ -5,11 +5,11 @@
   </h3>
   <form class='sendSurvey'>
     <fieldset>
-      <input type='radio' name='answer' /><label> {{survey.possibleAnswers.[0]}} </label><br>
-      <input type='radio' name='answer' /><label> {{survey.possibleAnswers.[1]}} </label><br>
-      <input type='radio' name='answer' /><label> {{survey.possibleAnswers.[2]}} </label><br>
-      <input type='radio' name='answer' /><label> {{survey.possibleAnswers.[3]}} </label><br>
-      <input type='submit' value='Submit Survey' />
+      <input type='radio' name='answer[answer]' value='{{survey.possibleAnswers.[0]}}' /><label> {{survey.possibleAnswers.[0]}} </label><br>
+      <input type='radio' name='answer[answer]' value='{{survey.possibleAnswers.[1]}}' /><label> {{survey.possibleAnswers.[1]}} </label><br>
+      <input type='radio' name='answer[answer]' value='{{survey.possibleAnswers.[2]}}' /><label> {{survey.possibleAnswers.[2]}} </label><br>
+      <input type='radio' name='answer[answer]' value='{{survey.possibleAnswers.[3]}}' /><label> {{survey.possibleAnswers.[3]}} </label><br>
+      <button id='subSurvey' type='submit' value='Submit Survey'>Submit</button>
     </fieldset>
   </form>
 </section>

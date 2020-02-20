@@ -58,10 +58,26 @@ const onDeleteSurvey = (id) => {
   })
 }
 
+const onSendAnswers = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/answers/' + store.currentSurveyId,
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'answer': {
+        'answer': store.currentAnswer
+      }
+    }
+  })
+}
+
 module.exports = {
   createSurvey,
   showAllSurveys,
   onShowOneSurvey,
   onDeleteSurvey,
-  onUpdateSurvey
+  onUpdateSurvey,
+  onSendAnswers
 }
