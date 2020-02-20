@@ -31,6 +31,8 @@ const onGetAllSurveysFailure = (response) => {
 
 const onGetOneSurveySuccess = (response) => {
   const showThisSurvey = showOneSurvey({ survey: response.survey })
+  $('#updateSurvey').hide()
+  $('#createSurvey').hide()
   $('#surveybox').html(showThisSurvey)
 }
 
@@ -70,7 +72,9 @@ const sendSurveyFailure = () => {
 }
 
 const onDeleteSurveySuccess = () => {
-  console.log('successfully deleted!')
+  $('#message').show('')
+  $('#message').text('Survey deleted.')
+  $('#message').delay(2000).hide('Survey deleted.')
 }
 
 module.exports = {
