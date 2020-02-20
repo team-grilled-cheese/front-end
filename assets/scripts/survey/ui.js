@@ -18,6 +18,7 @@ const onCreateFailure = function () {
 
 const onGetAllSurveysSuccess = (response) => {
   const onGetAllSurveysHtml = surveysTemplate({surveys: response.surveys})
+  $('.sendSurvey').show()
   $('#surveybox').html(onGetAllSurveysHtml)
 }
 
@@ -55,6 +56,18 @@ const onDeleteSurveyFailure = () => {
   $('#message').delay(2000).hide('Something went wrong!')
 }
 
+const sendSurveySuccess = () => {
+  $('#message').show('')
+  $('#message').text('Survey Submitted!')
+  $('#message').delay(2000).hide('Survey Submitted!')
+}
+
+const sendSurveyFailure = () => {
+  $('#message').show('')
+  $('#message').text('Survey not submitted.')
+  $('#message').delay(2000).hide('Survey not submitted.')
+}
+
 module.exports = {
   onCreateSuccess,
   onCreateFailure,
@@ -64,5 +77,7 @@ module.exports = {
   onGetOneSurveyFailure,
   onDeleteSurveyFailure,
   onUpdateSurveyFailure,
-  onUpdateSurveySuccess
+  onUpdateSurveySuccess,
+  sendSurveySuccess,
+  sendSurveyFailure
 }
