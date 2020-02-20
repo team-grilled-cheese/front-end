@@ -35,6 +35,7 @@ const onGetOneSurveySuccess = (response) => {
   $('#updateSurvey').hide()
   $('#createSurvey').hide()
   $('#surveybox').html(showThisSurvey)
+  $('#answerStats').show()
   store.survey = response.survey
   api.getThisSurveyAnswers()
     .then(showSurveyAnswers)
@@ -77,7 +78,7 @@ const showSurveyAnswers = (response) => {
   $('.answer1').text(`${answer1.length}` + ' users have choosen ' + `${possibleAnswers[0]}`)
   $('.answer2').text(`${answer2.length}` + ' users have choosen ' + `${possibleAnswers[1]}`)
   $('.answer3').text(`${answer3.length}` + ' users have choosen ' + `${possibleAnswers[2]}`)
-  $('.answer4').text(`${answer4.length}` + ' users have choosen ' + `${possibleAnswers[4]}`)
+  $('.answer4').text(`${answer4.length}` + ' users have choosen ' + `${possibleAnswers[3]}`)
 }
 
 const onGetOneSurveyFailure = () => {
@@ -106,6 +107,7 @@ const onDeleteSurveyFailure = () => {
 const sendSurveySuccess = () => {
   $('#message').show('')
   $('#message').text('Survey Submitted!')
+  $('#answerStats').delay(2000).hide('')
   $('#message').delay(2000).hide('Survey Submitted!')
 }
 
