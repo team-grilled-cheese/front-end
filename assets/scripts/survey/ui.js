@@ -8,6 +8,7 @@ const onCreateSuccess = function (response) {
   $('#message').show('')
   $('#message').text('Success!')
   $('#message').delay(2000).hide('Success!')
+  $('#createSurvey').hide()
   $('#createSurvey').trigger('reset')
 }
 
@@ -121,6 +122,7 @@ const sendSurveyFailure = () => {
 }
 
 const onDeleteSurveySuccess = () => {
+  $('#answerStats').hide()
   $('#message').show('')
   $('#message').text('Survey deleted.')
   $('#message').delay(2000).hide('Survey deleted.')
