@@ -53,7 +53,7 @@ As a group we decided that mob going and pair programming would be the best way 
 ![wireframe](https://i.imgur.com/RZVxwRI.jpg)
 
 ### Routes Catalog
-![route catalog]('./public/img/RoutesCatalog.png')
+![route catalog](https://i.imgur.com/sHUgHcH.png)
 
 ### ERD
-![ERD]('./public/img/Project3ERD.png')
+![ERD](https://i.imgur.com/OxPanCq.jpg)
