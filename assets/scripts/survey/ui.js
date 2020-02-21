@@ -8,6 +8,7 @@ const onCreateSuccess = function (response) {
   $('#message').show('')
   $('#message').text('Success!')
   $('#message').delay(2000).hide('Success!')
+  $('#createSurvey').hide()
   $('#createSurvey').trigger('reset')
 }
 
@@ -35,6 +36,7 @@ const onGetOneSurveySuccess = (response) => {
   $('#updateSurvey').hide()
   $('#createSurvey').hide()
   $('#surveybox').html(showThisSurvey)
+  $('#answerStats').show()
   store.survey = response.survey
   api.getThisSurveyAnswers()
     .then(showSurveyAnswers)
@@ -42,17 +44,20 @@ const onGetOneSurveySuccess = (response) => {
 }
 
 const showSurveyAnswers = (response) => {
+  // console.log(store.survey._id)
   $('.answer1').text(' ')
   $('.answer2').text(' ')
   $('.answer3').text(' ')
   $('.answer4').text(' ')
   store.answersArray = response.answers
+  const filterAnswers = store.answersArray.filter(answer => answer.surveyRef === store.survey._id)
+  // console.log(filterAnswers)
   const possibleAnswers = []
   store.survey.possibleAnswers.forEach(answer => {
     possibleAnswers.push(answer)
   })
   const answerArray = []
-  store.answersArray.forEach(answer => {
+  filterAnswers.forEach(answer => {
     answerArray.push(answer)
   })
   const allAnswers = []
@@ -77,7 +82,7 @@ const showSurveyAnswers = (response) => {
   $('.answer1').text(`${answer1.length}` + ' users have choosen ' + `${possibleAnswers[0]}`)
   $('.answer2').text(`${answer2.length}` + ' users have choosen ' + `${possibleAnswers[1]}`)
   $('.answer3').text(`${answer3.length}` + ' users have choosen ' + `${possibleAnswers[2]}`)
-  $('.answer4').text(`${answer4.length}` + ' users have choosen ' + `${possibleAnswers[4]}`)
+  $('.answer4').text(`${answer4.length}` + ' users have choosen ' + `${possibleAnswers[3]}`)
 }
 
 const onGetOneSurveyFailure = () => {
@@ -106,6 +111,7 @@ const onDeleteSurveyFailure = () => {
 const sendSurveySuccess = () => {
   $('#message').show('')
   $('#message').text('Survey Submitted!')
+  $('#answerStats').delay(2000).hide('')
   $('#message').delay(2000).hide('Survey Submitted!')
 }
 
@@ -116,6 +122,7 @@ const sendSurveyFailure = () => {
 }
 
 const onDeleteSurveySuccess = () => {
+  $('#answerStats').hide()
   $('#message').show('')
   $('#message').text('Survey deleted.')
   $('#message').delay(2000).hide('Survey deleted.')
