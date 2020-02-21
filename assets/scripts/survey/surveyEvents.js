@@ -23,6 +23,7 @@ const onCreateSurvey = (event) => {
 
 const onShowSurveys = (event) => {
   event.preventDefault()
+  $('#answerStats').hide()
 
   api.showAllSurveys()
     .then(ui.onGetAllSurveysSuccess)
@@ -57,6 +58,7 @@ const onUpdateSurvey = (event) => {
   event.stopPropagation()
   store.SurveyId = id // saving id of the element in the list (survey) that was clicked
   $('#oneSurvey').hide()
+  $('#answerStats').hide()
   $('#updateSurvey').show()
   $('#createSurvey').hide()
 }
@@ -80,6 +82,8 @@ const onEditSurvey = (event) => {
 
 const onDeleteSurvey = (event) => {
   event.preventDefault()
+  $('#answerStats').hide()
+  $('#oneSurvey').hide()
   const id = $(event.target).closest('section').data('id')
   // console.log(id)
   event.stopPropagation()
@@ -89,6 +93,7 @@ const onDeleteSurvey = (event) => {
     .catch(ui.onDeleteSurveyFailure)
 }
 const showCreateSurveyForm = (event) => {
+  $('#answerStats').hide()
   $('#oneSurvey').hide()
   $('#updateSurvey').hide()
   $('#surveybox').show()
