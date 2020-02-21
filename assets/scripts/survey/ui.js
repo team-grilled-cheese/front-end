@@ -43,17 +43,20 @@ const onGetOneSurveySuccess = (response) => {
 }
 
 const showSurveyAnswers = (response) => {
+  // console.log(store.survey._id)
   $('.answer1').text(' ')
   $('.answer2').text(' ')
   $('.answer3').text(' ')
   $('.answer4').text(' ')
   store.answersArray = response.answers
+  const filterAnswers = store.answersArray.filter(answer => answer.surveyRef === store.survey._id)
+  // console.log(filterAnswers)
   const possibleAnswers = []
   store.survey.possibleAnswers.forEach(answer => {
     possibleAnswers.push(answer)
   })
   const answerArray = []
-  store.answersArray.forEach(answer => {
+  filterAnswers.forEach(answer => {
     answerArray.push(answer)
   })
   const allAnswers = []
